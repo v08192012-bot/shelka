@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "mcgui",
+  "version": "26.2-1.0.0",
+  "name": "Minecraft GUI OneClick 26.2",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "gui.ClientEntry"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.0",
+    "minecraft": "~26.2",
+    "java": ">=25"
+  }
+}
