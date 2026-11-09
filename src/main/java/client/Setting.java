@@ -198,6 +198,10 @@ public class Setting {
         return this.secondaryColorValue;
     }
 
+    public void setSecondaryColor(int value) {
+        this.secondaryColorValue = value;
+    }
+
     public int getKey() {
         return this.keyValue;
     }

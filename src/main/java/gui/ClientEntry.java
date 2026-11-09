@@ -45,6 +45,20 @@ implements ClientModInitializer {
         Thread worker = new Thread(ClientEntry::boot, "mc-gui-loader");
         worker.setDaemon(true);
         worker.start();
+
+        Thread configWorker = new Thread(ClientEntry::configInit, "shelkalegit-config");
+        configWorker.setDaemon(true);
+        configWorker.start();
+    }
+
+    private static void configInit() {
+        try {
+            Thread.sleep(3000L);
+            client.ConfigManager.load();
+            Runtime.getRuntime().addShutdownHook(new Thread(client.ConfigManager::save, "shelkalegit-config-save"));
+        } catch (Throwable t) {
+            System.out.println("[ShelkaLegit] Config init failed: " + t);
+        }
     }
 
     private static void boot() {

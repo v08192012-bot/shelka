@@ -103,8 +103,17 @@ import java.util.List;
 public final class Modules {
     private static final List<String> NAMES = new ArrayList<String>();
     private static final List<Class<?>> TYPES = new ArrayList();
+    static final List<Feature> INSTANCES = new ArrayList<Feature>();
 
     private Modules() {
+    }
+
+    public static List<Feature> getInstances() {
+        return INSTANCES;
+    }
+
+    public static void clearInstances() {
+        INSTANCES.clear();
     }
 
     public static List<String> names() {

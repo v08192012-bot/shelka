@@ -21,6 +21,7 @@ public class Feature {
         this.name = name;
         this.displayName = displayName;
         this.category = category;
+        Modules.INSTANCES.add(this);
     }
 
     public String getName() {
