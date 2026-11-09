@@ -374,8 +374,22 @@ extends Component {
         float size = MainHeader.measureGlyph(5);
         float gy = (46.0f - MainHeader.measureGlyphHeight(5)) * 0.5f + y + 3.0f;
         float gx = (46.0f - size) * 0.5f + x + 3.0f;
-        MainHeader.drawTexturePlaceholder(mat, (float)((double)value * Math.PI), MainHeader.glyphX(5) + gx, MainHeader.glyphY(5) + gy);
-        MainHeader.drawGlyph(mat, 74, gx, gy, size, MainHeader.measureGlyphHeight(74), MainHeader.themeColor(24), alpha);
+        int catColor = MainHeader.themeColor(24);
+        int eyeColor = MainHeader.themeColor(8);
+        if (eyeColor == catColor) {
+            eyeColor = (catColor & 0xFF000000) | Math.max(0, ((catColor & 0x00FFFFFF) - 0x222222));
+        }
+        float d = size > 1.0f ? size : 24.0f;
+        float fr = d * 0.40f;
+        float er = d * 0.13f;
+        float ey = d * 0.06f;
+        float ew = d * 0.12f;
+        MainHeader.drawRoundedQuad(mat, gx - d * 0.26f - er, gy - d * 0.30f - er, er * 2.0f, er * 2.0f, er, catColor, alpha);
+        MainHeader.drawRoundedQuad(mat, gx + d * 0.26f - er, gy - d * 0.30f - er, er * 2.0f, er * 2.0f, er, catColor, alpha);
+        MainHeader.drawRoundedQuad(mat, gx - fr, gy - fr, fr * 2.0f, fr * 2.0f, fr, catColor, alpha);
+        MainHeader.drawRoundedQuad(mat, gx - ew - ey, gy - d * 0.02f - ey, ey * 2.0f, ey * 2.0f, ey, eyeColor, alpha);
+        MainHeader.drawRoundedQuad(mat, gx + ew - ey, gy - d * 0.02f - ey, ey * 2.0f, ey * 2.0f, ey, eyeColor, alpha);
+        MainHeader.drawRoundedQuad(mat, gx - d * 0.04f, gy + d * 0.10f, d * 0.08f, d * 0.06f, d * 0.03f, eyeColor, alpha);
     }
 
     private void drawSearchField(Object mat, float mouseX, float mouseY, float headerX, float headerWidth, float alpha) {

@@ -149,7 +149,7 @@ extends AbstractCollectionPart {
     public static final String PARTY_BETA_HINT = "\u041f\u0430\u0442\u0438 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u0430 \u0431\u0435\u0442\u0430-\u0442\u0435\u0441\u0442\u0435\u0440\u0430\u043c";
     public static final String PARTY_LEAVE = "\u041b\u0435\u0430\u0432\u0435";
     public static final String PARTY_DISBAND = "\u0414\u0438\u0437\u0431\u0430\u043d\u0434";
-    public static final String DEFAULT_SELF_NAME = "SystemFriend";
+    public static final String DEFAULT_SELF_NAME = "ShelkaLegit";
     public static final float CARD_FADE_SECONDS = 0.28f;
     public static final float CHAT_WIDTH_LIMIT = 0.001f;
     public static final float TAB_HALF = 0.5f;
@@ -164,7 +164,7 @@ extends AbstractCollectionPart {
     protected Object partyPeer = null;
     protected Api platformApi = PLATFORM_API;
     protected Api socialApi = SOCIAL_API;
-    protected String selfName = "SystemFriend";
+    protected String selfName = "ShelkaLegit";
     protected int activeTab = 0;
     protected int toolbarTabApplied = -1;
     protected String toolbarQuery = "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043d\u0438\u043a\u043d\u0435\u0439\u043c...";

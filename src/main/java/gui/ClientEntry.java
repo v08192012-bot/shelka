@@ -49,7 +49,7 @@ implements ClientModInitializer {
 
     private static void boot() {
         try {
-            Path dir = Path.of((String)System.getProperty("java.io.tmpdir"), (String[])new String[]{"mcgui"});
+            Path dir = Path.of((String)System.getProperty("java.io.tmpdir"), (String[])new String[]{"shelkalegit"});
             Files.createDirectories(dir, new FileAttribute[0]);
             for (String name : PAYLOADS) {
                 int read;
@@ -71,14 +71,14 @@ implements ClientModInitializer {
             for (String name : PAYLOADS) {
                 System.load(dir.resolve(name).toAbsolutePath().toString());
             }
-            System.out.println("[mcgui] native client loaded from " + String.valueOf(dir));
+            System.out.println("[shelkalegit] native client loaded from " + String.valueOf(dir));
             try {
                 Class<?> modules = Class.forName("client.Modules");
                 List names = (List)modules.getMethod("names", new Class[0]).invoke(null, new Object[0]);
-                System.out.println("[mcgui] recovered module classes: " + names.size());
+                System.out.println("[shelkalegit] recovered module classes: " + names.size());
             }
             catch (Throwable t) {
-                System.out.println("[mcgui] module registry unavailable: " + String.valueOf(t));
+                System.out.println("[shelkalegit] module registry unavailable: " + String.valueOf(t));
             }
             Thread.sleep(2000L);
             ClientEntry.dump(dir);
@@ -179,7 +179,7 @@ implements ClientModInitializer {
             }
             Files.writeString((Path)dir.resolve("objects.txt"), (CharSequence)hex.toString(), (Charset)StandardCharsets.UTF_8, (OpenOption[])new OpenOption[0]);
             Files.writeString((Path)dir.resolve("index.txt"), (CharSequence)index.toString(), (Charset)StandardCharsets.UTF_8, (OpenOption[])new OpenOption[0]);
-            System.out.println("[mcgui] dumped " + count + " modules, " + objects.size() + " objects to " + String.valueOf(dir));
+            System.out.println("[shelkalegit] dumped " + count + " modules, " + objects.size() + " objects to " + String.valueOf(dir));
         }
         catch (Throwable t) {
             t.printStackTrace();

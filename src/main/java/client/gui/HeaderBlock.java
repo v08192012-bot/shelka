@@ -31,7 +31,7 @@ extends AbstractSidebarBlock {
     public static final float EMPTY_WIDTH = 0.0f;
     public static final int THEME_ICON = 24;
     public static final int THEME_LABEL = 20;
-    public static final String DEFAULT_LABEL = "Syst\u0435m";
+    public static final String DEFAULT_LABEL = "ShelkaLegit";
     public static final String DEFAULT_CAPTION = "\u0421lient categories";
     public int icon = 0;
     public String caption;

@@ -33,7 +33,7 @@ java {
 jar {
     manifest {
         attributes(
-            'Implementation-Title': 'mcgui',
+            'Implementation-Title': 'ShelkaLegit',
             'Implementation-Version': project.version
         )
     }

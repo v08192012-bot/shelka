@@ -17,7 +17,7 @@ extends Feature {
     public static final long RVA_ON_TICK = 2735200694864L;
     public static final long RVA_ON_ENABLE = 2735200694368L;
     public static final long RVA_ON_DISABLE = 2735200694736L;
-    private static final String NAME = "S\u0443stem";
+    private static final String NAME = "ShelkaLegit";
     private Entity fake;
     private int fakeId = -1;
 

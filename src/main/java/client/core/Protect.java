@@ -24,7 +24,7 @@ extends Feature {
     public static final long RVA_APPLY = 2735200337488L;
     public static final long RVA_REFRESH_OTHERS = 2735200336848L;
     public static final long RVA_SNAPSHOT_INIT = 2735200354816L;
-    public static final String DEFAULT_NICK = "SystemPlayer";
+    public static final String DEFAULT_NICK = "ShelkaLegit";
     public static final String DEFAULT_OTHERS_NICK = "Player";
     private static final int MARK_TABLE_SIZE = 256;
     private static final int CASE_DELTA = 32;
