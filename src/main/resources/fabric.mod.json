@@ -6,7 +6,8 @@
   "environment": "client",
   "entrypoints": {
     "client": [
-      "gui.ClientEntry"
+      "gui.ClientEntry",
+      "client.ConfigHook"
     ]
   },
   "depends": {

@@ -8,28 +8,23 @@ package client;
 
 public class ConfigHook {
     static {
-        Thread t = new Thread(() -> {
+        Thread worker = new Thread(() -> {
             try {
                 Thread.sleep(3000L);
                 ConfigManager.load();
-                try {
-                    java.lang.reflect.Method m = Runtime.class.getMethod("addShutdownHook", Thread.class);
-                    m.invoke(Runtime.getRuntime(), new Thread(ConfigManager::save, "shelkalegit-save"));
-                } catch (Throwable t2) {
-                    Thread saveThread = new Thread(() -> {
-                        while (true) {
-                            try { Thread.sleep(60000L); } catch (InterruptedException e) { return; }
-                            ConfigManager.save();
-                        }
-                    }, "shelkalegit-save");
-                    saveThread.setDaemon(true);
-                    saveThread.start();
-                }
-            } catch (Throwable t) {
-                System.out.println("[ShelkaLegit] Config init failed: " + t);
+                Thread saveThread = new Thread(() -> {
+                    while (true) {
+                        try { Thread.sleep(60000L); } catch (InterruptedException e) { return; }
+                        ConfigManager.save();
+                    }
+                }, "shelkalegit-save");
+                saveThread.setDaemon(true);
+                saveThread.start();
+            } catch (Throwable err) {
+                System.out.println("[ShelkaLegit] Config init failed: " + err);
             }
         }, "shelkalegit-config");
-        t.setDaemon(true);
-        t.start();
+        worker.setDaemon(true);
+        worker.start();
     }
 }
