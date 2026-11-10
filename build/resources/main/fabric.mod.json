@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "mcgui",
+  "id": "shelkalegit",
   "version": "26.2-1.0.0",
-  "name": "Minecraft GUI OneClick 26.2",
+  "name": "ShelkaLegit",
   "environment": "client",
   "entrypoints": {
     "client": [
