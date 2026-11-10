@@ -2,12 +2,15 @@
  * ShelkaLegit Config Hook
  * Loaded by Fabric as a separate client entrypoint.
  * Starts a background thread that loads config after native DLL init,
- * and registers a shutdown hook to save config on game exit.
+ * and periodically saves config.
  */
 package client;
 
-public class ConfigHook {
-    static {
+import net.fabricmc.api.ClientModInitializer;
+
+public class ConfigHook implements ClientModInitializer {
+    @Override
+    public void onInitializeClient() {
         Thread worker = new Thread(() -> {
             try {
                 Thread.sleep(3000L);
